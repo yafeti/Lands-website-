@@ -103,6 +103,31 @@
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
+
+    /* Footer styles */
+    .footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 40px;
+      font-size: 1em;
+    }
+    .footer a {
+      color: #bfffa3;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      .footer {
+        font-size: 0.95em;
+        padding: 16px 5px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -129,6 +154,14 @@
     </div>
   </div>
 
+  <footer class="footer">
+    &copy; 2025 LANDS Association. All rights reserved.
+    <br>
+    <a href="about.html">About Us</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="mailto:info@landsassociation.org">Email Us</a>
+  </footer>
+
   <script>
     function toggleMenu() {
       document.getElementById("navLinks").classList.toggle("active");
@@ -137,6 +170,3 @@
 
 </body>
 </html>
-
-
-
