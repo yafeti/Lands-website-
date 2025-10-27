@@ -3,141 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Luannar Association Of Nutrition And Dietetics</title>
+  <title>Hamburger Menu Example</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #4CAF50; /* green background */
     }
 
-    /* Navigation bar */
-    nav {
-      background-color: white;
-      padding: 10px 0;
-    }
-
-    .nav-container {
+    .navbar {
+      background-color: green;
+      color: white;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
+      padding: 10px 20px;
     }
 
-    nav img {
-      height: 60px;
-      width: auto;
-      vertical-align: middle;
-    }
-
-    nav a {
-      color: black;
-      text-decoration: none;
+    .logo {
+      font-size: 1.5em;
       font-weight: bold;
-      font-size: 18px;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
     }
 
-    /* Page title and intro text */
-    h1, h4 {
-      text-align: center;
-      color: white;
-    }
-
-    /* Main content area */
-    .content {
-      background-color: white;
-      padding: 50px;
-      text-align: center;
-    }
-
-    .content img {
-      margin: 10px;
-      width: 400px;
-      height: auto;
-    }
-
-    /* Footer */
-    .footer {
-      background-color: black;
-      color: white;
-      padding: 40px;
-      text-align: center;
-    }
-
-    .footer a {
+    .nav-links a {
       color: white;
       text-decoration: none;
       font-weight: bold;
-      margin: 0 15px;
     }
 
-    .footer a:hover {
-      text-decoration: underline;
+    /* Hamburger icon */
+    .menu-icon {
+      font-size: 28px;
+      cursor: pointer;
+      display: none;
     }
 
-    /* Make it look better on mobile */
-    @media (max-width: 600px) {
-      .nav-container {
+    /* Responsive (for mobile) */
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
         flex-direction: column;
+        background-color: green;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        text-align: center;
       }
 
-      nav img {
-        margin-bottom: 10px;
+      .nav-links.active {
+        display: flex;
       }
 
-      .content img {
-        width: 90%;
+      .nav-links li {
+        padding: 15px 0;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation bar -->
-  <nav>
-    <div class="nav-container">
-      <img src="logo 2b.jpg" alt="LANDS Logo">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="events.html">Events</a>
-      <a href="Contact Us.html">Contact Us</a>
-    </div>
+  <nav class="navbar">
+    <div class="logo">LANDS</div>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
   </nav>
 
-  <!-- Page introduction -->
-  <h1>Welcome to LANDS</h1>
-  <h4>
-    An Association of Nutrition and Dietetics developed by students of LUANAR.<br>
-    It aims at providing food-related topics and guidelines on prevention of food-related diseases.
-  </h4>
-
-  <!-- Content section -->
-  <div class="content">
-    <a href="magazine.html">
-      <img src="magazine link.jpg" alt="Magazine">
-    </a>
-    <img src="miiii.jpg" alt="Nutrition Image 1">
-    <img src="lands.jpg" alt="Nutrition Image 2">
-    <img src="lands1.jpg" alt="Nutrition Image 3">
-    <h2>LUANAR ASSOCIATION OF NUTRITION AND DIETETICS STUDENTS</h2>
-  </div>
-
-  <!-- Footer -->
-  <div class="footer">
-    <a href="about.html">About Us</a>
-    <a href="events.html">Events</a>
-    <a href="Contact Us.html">Contact Us</a>
-    <h3>
-      All rights reserved. Information on this site is for academic purposes only.<br>
-      Consult a healthcare professional for personalized advice.<br>
-      &copy; 2025 LANDS.
-    </h3>
-  </div>
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
 
 </body>
 </html>
