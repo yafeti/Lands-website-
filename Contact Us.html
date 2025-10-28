@@ -1,52 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LANDS - About Us</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: white;
-            color: white;
-        }
-        nav {
-            background-color: #2E7D32;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: black;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .content {
-            padding: 50px;
-            text-align: left;
-	color:black;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - LANDS</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e8f5e9;
+      color: #333;
+    }
+
+    header {
+      background-color: green;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: green;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, textarea {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      background-color: green;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background-color: #006400;
+    }
+
+    .contact-info {
+      margin-top: 30px;
+      background-color: #f1f8e9;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .contact-info h3 {
+      color: green;
+    }
+
+    .whatsapp {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #25d366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .whatsapp:hover {
+      background-color: #128c7e;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 10px;
+        padding: 15px;
+      }
+      button {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="events.html">Events</a>
-        <a href="contact.html">Contact Us</a>
-    </nav>
-    <div class="content">
-        <h1 align="center">About LANDS</h1>
-	<h4>CALL US or WHATSAPP<p> +265 990 15 67 38</h4>
-	<h3>ADDRESS:</h3>
-        <h4 align="left">Lilongwe,<p>Malawi,<p>LUANAR(NRC Campus).</h4>
-	<h4>Email:</h4>
-	<a href="Mailto:emmanuelkamtima4@gmail.com"><p>emmanuelkamtima4@gmail.com</p><a/a>
-	<a href="https://www.facebook.com/LANDSbunda">Luanar Association of nutrition and Dietetics Students</a>
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+
+  <div class="container">
+    <h2>We’d love to hear from you!</h2>
+    
+    <!-- The form sends data directly to your email -->
+    <form action="https://formsubmit.co/emmanuelkamtima4@gmail.com" method="POST">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+
+      <!-- Optional: redirect after submit -->
+      <input type="hidden" name="_next" value="https://your-website-link.com/thankyou.html">
+      <input type="hidden" name="_captcha" value="false">
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <h3>Other ways to reach us:</h3>
+      <p><strong>Phone:</strong> <a href="https://wa.me/265990156738" class="whatsapp">Chat on WhatsApp</a></p>
+      <p><strong>Email:</strong> <a href="mailto:emmanuelkamtima4@gmail.com">emmanuelkamtima4@gmail.com</a></p>
+      <p><strong>Address:</strong> LANDS Department, University Campus, Malawi</p>
     </div>
+  </div>
 </body>
 </html>
