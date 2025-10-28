@@ -117,8 +117,14 @@
   <div class="container">
     <h2>We’d love to hear from you!</h2>
     
-    <!-- The form sends data directly to your email -->
+    <!-- ✅ Fixed FormSubmit setup -->
     <form action="https://formsubmit.co/emmanuelkamtima4@gmail.com" method="POST">
+      <!-- Hidden settings -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Contact Message from LANDS Website">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://your-website-link.com/thankyou.html">
+
       <label for="name">Full Name</label>
       <input type="text" id="name" name="name" placeholder="Enter your name" required />
 
@@ -127,10 +133,6 @@
 
       <label for="message">Message</label>
       <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
-
-      <!-- Optional: redirect after submit -->
-      <input type="hidden" name="_next" value="https://your-website-link.com/thankyou.html">
-      <input type="hidden" name="_captcha" value="false">
 
       <button type="submit">Send Message</button>
     </form>
