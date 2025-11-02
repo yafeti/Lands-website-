@@ -140,6 +140,43 @@
   </style>
 </head>
 <body>
+  <!-- ✅ BMI Calculator Section -->
+<section id="bmi-calculator" style="max-width:350px;margin:auto;padding:20px;background:#f9fff9;border-radius:15px;box-shadow:0 0 10px rgba(0,0,0,0.1);text-align:center;">
+  <h2 style="color:#2e7d32;">BMI Calculator</h2>
+  <p style="color:#555;font-size:14px;">Check your Body Mass Index</p>
+
+  <input type="number" id="weight" placeholder="Weight (kg)" style="width:90%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:8px;">
+  <input type="number" id="height" placeholder="Height (m)" style="width:90%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:8px;">
+
+  <button onclick="calcBMI()" style="background:#43a047;color:white;padding:10px 15px;border:none;border-radius:8px;width:95%;font-weight:bold;cursor:pointer;">Calculate</button>
+
+  <p id="bmi-result" style="margin-top:10px;font-weight:bold;color:#2e7d32;"></p>
+</section>
+
+<script>
+function calcBMI() {
+  const w = parseFloat(document.getElementById('weight').value);
+  const h = parseFloat(document.getElementById('height').value);
+  const result = document.getElementById('bmi-result');
+
+  if (!w || !h) {
+    result.style.color = "red";
+    result.textContent = "Please enter both weight and height.";
+    return;
+  }
+
+  const bmi = (w / (h * h)).toFixed(2);
+  let status = "";
+
+  if (bmi < 18.5) status = "Underweight";
+  else if (bmi < 24.9) status = "Normal weight";
+  else if (bmi < 29.9) status = "Overweight";
+  else status = "Obese";
+
+  result.style.color = "#2e7d32";
+  result.textContent = `Your BMI is ${bmi} (${status})`;
+}
+</script>
 
   <nav class="navbar">
     <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
@@ -200,6 +237,7 @@
 
 </body>
 </html>
+
 
 
 
