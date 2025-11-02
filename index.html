@@ -140,7 +140,32 @@
   </style>
 </head>
 <body>
-  <!-- ✅ BMI Calculator Section -->
+
+  <nav class="navbar">
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <div class="logo-text">LANDS</div>
+    <img src="BackgroundEraser_20251031_115242659.png" alt="LANDS Logo" class="logo-img">
+    <img src="BackgroundEraser_20251031_120538214.png" alt="Luanar logo" class="logo-img">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="Events Us.html">Events</a></li>
+      <li><a href="About Us.html">About Us</a></li>
+      <li><a href="Contact Us.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <h2>Welcome to LANDS</h2>
+    <p>Explore our latest updates, magazines, and events!</p>
+
+    <div class="image-gallery">
+      <img src="magazine link.jpg" alt="Magazine">
+      <img src="diets.jpg" alt="Diets Lands">
+      <img src="lands1.jpg" alt="Lands1">
+      <img src="IMG-20250918-WA0035.jpg" alt="during lands joint meeting Luanar Bunda campus">
+      <img src="21.jpg" alt="LANDS election"
+    </div>
+  </div>
+      <!-- ✅ BMI Calculator Section -->
 <section id="bmi-calculator" style="max-width:350px;margin:auto;padding:20px;background:#f9fff9;border-radius:15px;box-shadow:0 0 10px rgba(0,0,0,0.1);text-align:center;">
   <h2 style="color:#2e7d32;">BMI Calculator</h2>
   <p style="color:#555;font-size:14px;">Check your Body Mass Index</p>
@@ -177,31 +202,7 @@ function calcBMI() {
   result.textContent = `Your BMI is ${bmi} (${status})`;
 }
 </script>
-
-  <nav class="navbar">
-    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-    <div class="logo-text">LANDS</div>
-    <img src="BackgroundEraser_20251031_115242659.png" alt="LANDS Logo" class="logo-img">
-    <img src="BackgroundEraser_20251031_120538214.png" alt="Luanar logo" class="logo-img">
-    <ul class="nav-links" id="navLinks">
-      <li><a href="Events Us.html">Events</a></li>
-      <li><a href="About Us.html">About Us</a></li>
-      <li><a href="Contact Us.html">Contact Us</a></li>
-    </ul>
-  </nav>
-
-  <div class="content">
-    <h2>Welcome to LANDS</h2>
-    <p>Explore our latest updates, magazines, and events!</p>
-
-    <div class="image-gallery">
-      <img src="magazine link.jpg" alt="Magazine">
-      <img src="diets.jpg" alt="Diets Lands">
-      <img src="lands1.jpg" alt="Lands1">
-      <img src="IMG-20250918-WA0035.jpg" alt="during lands joint meeting Luanar Bunda campus">
-      <img src="21.jpg" alt="LANDS election"
-    </div>
-  </div>
+    
   <!-- Image Gallery Link Section -->
 <section id="gallery" style="padding: 40px 20px; background-color: #f4f4f4; text-align: center;">
   <h2 style="color: green; margin-bottom: 20px;">📸 LANDS Image Gallery</h2>
@@ -237,6 +238,7 @@ function calcBMI() {
 
 </body>
 </html>
+
 
 
 
