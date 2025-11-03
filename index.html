@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-510737776"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-510737776');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-510737776"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-510737776');
+  </script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -91,7 +91,58 @@
       }
     }
 
-    /* Main page content */
+    /* ===== New Subpage Feature Section ===== */
+    .subpage-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      padding: 25px;
+      background-color: #fff5e6;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .subpage-card {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+      text-align: center;
+      width: 250px;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .subpage-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    }
+
+    .subpage-card h3 {
+      color: orange;
+      margin-bottom: 10px;
+    }
+
+    .subpage-card p {
+      color: #555;
+      font-size: 0.95em;
+      margin-bottom: 15px;
+    }
+
+    .subpage-card a {
+      background-color: green;
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .subpage-card a:hover {
+      background-color: darkgreen;
+    }
+
+    /* ===== Main content ===== */
     .content {
       text-align: center;
       padding: 30px;
@@ -113,7 +164,7 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 
-    /* Footer styles */
+    /* ===== Footer ===== */
     .footer {
       background: #222;
       color: #fff;
@@ -141,6 +192,7 @@
 </head>
 <body>
 
+  <!-- ===== Navbar ===== -->
   <nav class="navbar">
     <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
     <div class="logo-text">LANDS</div>
@@ -153,6 +205,34 @@
     </ul>
   </nav>
 
+  <!-- ===== New Feature Links Below Navbar ===== -->
+  <section class="subpage-links">
+    <div class="subpage-card">
+      <h3>Face of Association</h3>
+      <p>Meet the outstanding members representing LANDS spirit and values.</p>
+      <a href="face.html">View Faces</a>
+    </div>
+
+    <div class="subpage-card">
+      <h3>Nutrition Blog</h3>
+      <p>Read educational articles and updates about nutrition and wellness.</p>
+      <a href="blog.html">Visit Blog</a>
+    </div>
+
+    <div class="subpage-card">
+      <h3>Voice of LANDS</h3>
+      <p>Listen to discussions, interviews, and student insights from LANDS.</p>
+      <a href="voice.html">Listen Now</a>
+    </div>
+
+    <div class="subpage-card">
+      <h3>Myth Buster</h3>
+      <p>Learn the truth behind common nutrition and diet myths.</p>
+      <a href="myths.html">Explore Myths</a>
+    </div>
+  </section>
+
+  <!-- ===== Main Content ===== -->
   <div class="content">
     <h2>Welcome to LANDS</h2>
     <p>Explore our latest updates, magazines, and events!</p>
@@ -161,112 +241,77 @@
       <img src="magazine link.jpg" alt="Magazine">
       <img src="diets.jpg" alt="Diets Lands">
       <img src="lands1.jpg" alt="Lands1">
-      <img src="IMG-20250918-WA0035.jpg" alt="during lands joint meeting Luanar Bunda campus">
-      <img src="21.jpg" alt="LANDS election"
+      <img src="IMG-20250918-WA0035.jpg" alt="During LANDS joint meeting Luanar Bunda campus">
+      <img src="21.jpg" alt="LANDS election">
     </div>
   </div>
-      
-    
-  <!-- Image Gallery Link Section -->
-<section id="gallery" style="padding: 40px 20px; background-color: #f4f4f4; text-align: center;">
-  <h2 style="color: green; margin-bottom: 20px;">📸 LANDS Image Gallery</h2>
-  <p>Click below to explore and download LANDS event and activity photos.</p>
 
-  <a href="Images.html" style="background-color: green; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s;">
-    🖼️ View Image Gallery
-  </a>
-</section>
-    <!-- Video Gallery Link Section -->
-<section id="videos" style="padding: 40px 20px; background-color: #f4f4f4; text-align: center;">
-  <h2 style="color: green; margin-bottom: 20px;">🎬 LANDS Video Gallery</h2>
-  <p>Click below to explore and download LANDS event and activity videos.</p>
+  <!-- ===== Image Gallery Section ===== -->
+  <section id="gallery" style="padding: 40px 20px; background-color: #f4f4f4; text-align: center;">
+    <h2 style="color: green; margin-bottom: 20px;">📸 LANDS Image Gallery</h2>
+    <p>Click below to explore and download LANDS event and activity photos.</p>
+    <a href="Images.html" style="background-color: green; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s;">
+      🖼️ View Image Gallery
+    </a>
+  </section>
 
-  <a href="videos.html" style="background-color: green; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s;">
-    📹 View Video Gallery
-  </a>
-</section>
-    <!-- ✅ BMI Calculator Section -->
-<section id="bmi-calculator" style="max-width:350px;margin:auto;padding:20px;background:#f9fff9;border-radius:15px;box-shadow:0 0 10px rgba(0,0,0,0.1);text-align:center;">
-  <h2 style="color:#2e7d32;">BMI Calculator</h2>
-  <p style="color:#555;font-size:14px;">Check your Body Mass Index</p>
+  <!-- ===== Video Gallery Section ===== -->
+  <section id="videos" style="padding: 40px 20px; background-color: #f4f4f4; text-align: center;">
+    <h2 style="color: green; margin-bottom: 20px;">🎬 LANDS Video Gallery</h2>
+    <p>Click below to explore and download LANDS event and activity videos.</p>
+    <a href="videos.html" style="background-color: green; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: 0.3s;">
+      📹 View Video Gallery
+    </a>
+  </section>
 
-  <input type="number" id="weight" placeholder="Weight (kg)" style="width:90%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:8px;">
-  <input type="number" id="height" placeholder="Height (m)" style="width:90%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:8px;">
+  <!-- ===== BMI Calculator ===== -->
+  <section id="bmi-calculator" style="max-width:350px;margin:auto;padding:20px;background:#f9fff9;border-radius:15px;box-shadow:0 0 10px rgba(0,0,0,0.1);text-align:center;">
+    <h2 style="color:#2e7d32;">BMI Calculator</h2>
+    <p style="color:#555;font-size:14px;">Check your Body Mass Index</p>
 
-  <button onclick="calcBMI()" style="background:#43a047;color:white;padding:10px 15px;border:none;border-radius:8px;width:95%;font-weight:bold;cursor:pointer;">Calculate</button>
+    <input type="number" id="weight" placeholder="Weight (kg)" style="width:90%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:8px;">
+    <input type="number" id="height" placeholder="Height (m)" style="width:90%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:8px;">
 
-  <p id="bmi-result" style="margin-top:10px;font-weight:bold;color:#2e7d32;"></p>
-</section>
+    <button onclick="calcBMI()" style="background:#43a047;color:white;padding:10px 15px;border:none;border-radius:8px;width:95%;font-weight:bold;cursor:pointer;">Calculate</button>
 
-<script>
-function calcBMI() {
-  const w = parseFloat(document.getElementById('weight').value);
-  const h = parseFloat(document.getElementById('height').value);
-  const result = document.getElementById('bmi-result');
+    <p id="bmi-result" style="margin-top:10px;font-weight:bold;color:#2e7d32;"></p>
+  </section>
 
-  if (!w || !h) {
-    result.style.color = "red";
-    result.textContent = "Please enter both weight and height.";
-    return;
-  }
-
-  const bmi = (w / (h * h)).toFixed(2);
-  let status = "";
-
-  if (bmi < 18.5) status = "Underweight";
-  else if (bmi < 24.9) status = "Normal weight";
-  else if (bmi < 29.9) status = "Overweight";
-  else status = "Obese";
-
-  result.style.color = "#2e7d32";
-  result.textContent = `Your BMI is ${bmi} (${status})`;
-}
-</script>
-
+  <!-- ===== Footer ===== -->
   <footer class="footer">
     <a href="about.html">About Us</a> |
     <a href="contact.html">Contact</a> |
-    <a href="mailto: emmanuelkamtima4@gmail.com">Email Us</a>
-    &copy; 2025 LANDS Association. All rights reserved.
-    <br>
+    <a href="mailto:emmanuelkamtima4@gmail.com">Email Us</a>
+    <br>&copy; 2025 LANDS Association. All rights reserved.
   </footer>
 
   <script>
     function toggleMenu() {
       document.getElementById("navLinks").classList.toggle("active");
     }
-  </script>
 
+    function calcBMI() {
+      const w = parseFloat(document.getElementById('weight').value);
+      const h = parseFloat(document.getElementById('height').value);
+      const result = document.getElementById('bmi-result');
+
+      if (!w || !h) {
+        result.style.color = "red";
+        result.textContent = "Please enter both weight and height.";
+        return;
+      }
+
+      const bmi = (w / (h * h)).toFixed(2);
+      let status = "";
+
+      if (bmi < 18.5) status = "Underweight";
+      else if (bmi < 24.9) status = "Normal weight";
+      else if (bmi < 29.9) status = "Overweight";
+      else status = "Obese";
+
+      result.style.color = "#2e7d32";
+      result.textContent = `Your BMI is ${bmi} (${status})`;
+    }
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
