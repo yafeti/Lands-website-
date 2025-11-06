@@ -162,20 +162,26 @@
       max-width: 100%;
       width: 90%;
       margin: 30px auto;
-      position: relative;
       overflow: hidden;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      position: relative;
     }
 
-    .image-slider .slides img {
+    .slides-container {
+      overflow: hidden;
       width: 100%;
-      display: none;
-      border-radius: 10px;
     }
 
-    .image-slider .slides img.active {
-      display: block;
+    .slides {
+      display: flex;
+      transition: transform 1s ease-in-out;
+    }
+
+    .slides img {
+      width: 100%;
+      flex-shrink: 0;
+      border-radius: 10px;
     }
 
     .slider-dots {
@@ -246,17 +252,19 @@
 
   <!-- ===== Image Slider ===== -->
   <section class="image-slider">
-    <div class="slides">
-      <img src="lands1.jpg" alt="Slide 1">
-      <img src="diets.jpg" alt="Slide 2">
-      <img src="IMG-20250918-WA0035.jpg" alt="Slide 3">
-      <img src="21.jpg" alt="Slide 4">
+    <div class="slides-container">
+      <div class="slides">
+        <img src="lands1.jpg" alt="Slide 1">
+        <img src="diets.jpg" alt="Slide 2">
+        <img src="IMG-20250918-WA0035.jpg" alt="Slide 3">
+        <img src="21.jpg" alt="Slide 4">
+      </div>
     </div>
     <div class="slider-dots">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
-      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="goToSlide(0)"></span>
+      <span class="dot" onclick="goToSlide(1)"></span>
+      <span class="dot" onclick="goToSlide(2)"></span>
+      <span class="dot" onclick="goToSlide(3)"></span>
     </div>
   </section>
 
@@ -323,30 +331,36 @@
       result.textContent = `Your BMI is ${bmi} (${status})`;
     }
 
-    /* ===== Image Slider ===== */
+    /* ===== Right-to-Left Sliding Slider ===== */
     let slideIndex = 0;
-    showSlides();
+    const slides = document.querySelectorAll('.slides img');
+    const slidesContainer = document.querySelector('.slides');
+    const dots = document.querySelectorAll('.slider-dots .dot');
 
-    function showSlides() {
-      const slides = document.querySelectorAll('.image-slider .slides img');
-      const dots = document.querySelectorAll('.slider-dots .dot');
+    function showSlide(index) {
+      const offset = -index * 100; // move slides left
+      slidesContainer.style.transform = `translateX(${offset}%)`;
 
-      slides.forEach((slide) => slide.classList.remove('active'));
-      dots.forEach((dot) => dot.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+    }
 
+    function nextSlide() {
       slideIndex++;
-      if (slideIndex > slides.length) slideIndex = 1;
-
-      slides[slideIndex - 1].classList.add('active');
-      dots[slideIndex - 1].classList.add('active');
-
-      setTimeout(showSlides, 4000);
+      if(slideIndex >= slides.length) slideIndex = 0;
+      showSlide(slideIndex);
     }
 
-    function currentSlide(n) {
-      slideIndex = n - 1;
-      showSlides();
+    function goToSlide(index) {
+      slideIndex = index;
+      showSlide(slideIndex);
     }
+
+    // Auto-slide every 4 seconds
+    setInterval(nextSlide, 4000);
+
+    // Initialize slider
+    showSlide(slideIndex);
   </script>
 </body>
-        </html>
+</html>
