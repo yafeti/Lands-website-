@@ -141,7 +141,7 @@
       background: #222;
       color: #fff;
       text-align: center;
-      padding: 20px 10px;
+      padding: 25px 10px;
       margin-top: 40px;
       font-size: 1em;
     }
@@ -157,96 +157,77 @@
       text-decoration: underline;
     }
 
-    /* ===== Hero Slider with Overlay ===== */
-.hero-slider {
-  position: relative;
-  max-width: 100%;
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  height: 70vh; /* Adjust height as desired */
-  border-radius: 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
+    .footer-icons {
+      margin-top: 10px;
+    }
 
-.slides-container {
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-}
+    .footer-icons a {
+      display: inline-block;
+      margin: 0 8px;
+      font-size: 18px;
+      color: #bfffa3;
+      text-decoration: none;
+    }
 
-.slides {
-  display: flex;
-  transition: transform 1s ease-in-out;
-  height: 100%;
-}
+    .footer-icons a:hover {
+      color: orange;
+    }
 
-.slides img {
-  width: 100%;
-  flex-shrink: 0;
-  object-fit: cover;
-  height: 100%;
-}
+    /* ===== Hero Slider ===== */
+    .hero-slider {
+      position: relative;
+      max-width: 100%;
+      width: 100%;
+      margin: 0 auto;
+      overflow: hidden;
+      height: 70vh;
+      border-radius: 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
 
-/* Gradient overlay */
-.gradient-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1));
-  z-index: 1;
-}
+    .slides-container {
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+    }
 
-/* Text on top of slider */
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-}
+    .slides {
+      display: flex;
+      transition: transform 1s ease-in-out;
+      height: 100%;
+    }
 
-.hero-text h2 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-}
+    .slides img {
+      width: 100%;
+      flex-shrink: 0;
+      object-fit: cover;
+      height: 100%;
+    }
 
-.hero-text p {
-  font-size: 1.2em;
-  color: #e0e0e0;
-}
+    .slider-dots {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      text-align: center;
+    }
 
-/* Dots for slider */
-.slider-dots {
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  text-align: center;
-}
+    .slider-dots .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      display: inline-block;
+      background-color: #bbb;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
 
-.slider-dots .dot {
-  height: 12px;
-  width: 12px;
-  margin: 0 5px;
-  display: inline-block;
-  background-color: #bbb;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
+    .slider-dots .dot.active {
+      background-color: orange;
+    }
 
-.slider-dots .dot.active {
-  background-color: orange;
-}
     /* ===== BMI Calculator ===== */
     #bmi-calculator input, #bmi-calculator button {
       width: 100%;
@@ -292,10 +273,10 @@
     <a href="magazine.html">Magazine</a>
     <a href="Recipe.html">Recipe</a>
   </section>
+
   <div class="content">
     <h2>Welcome to LANDS</h2>
     <p>Explore our latest updates, magazines, and events!</p>
-    
 
   <!-- ===== Image Slider ===== -->
   <section class="image-slider">
@@ -315,61 +296,22 @@
     </div>
   </section>
 
-  <!-- ===== Main Content ===== -->
-  
-    <div class="image-gallery">
-      <img src="magazine link.jpg" alt="Magazine">
-      <img src="diets.jpg" alt="Diets Lands">
-      <img src="lands1.jpg" alt="Lands1">
-      <img src="IMG-20250918-WA0035.jpg" alt="During LANDS joint meeting Luanar Bunda campus">
-      <img src="21.jpg" alt="LANDS election">
+  <!-- ===== Story ===== -->
+  <div class="nutrition-story" style="border:1px solid #ccc; padding:15px; margin:20px 0; background-color:#fdfdfd; border-radius:8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+    <img src="malawi_child_nutrition.jpg" alt="Child Nutrition in Malawi" style="width:100%; max-height:250px; object-fit:cover; border-radius:8px; margin-bottom:15px;">
+    <h2 style="color:#d9534f;">National Nutrition Alert: Child Malnutrition in Malawi</h2>
+    <p style="font-size:16px; line-height:1.5; color:#333;">
+      According to recent data, about <strong>38 % of children under age 5 in Malawi are stunted</strong>.
+      The government has launched a <strong>National Multisector Nutrition Policy & Strategic Plan 2025–2030</strong>.
+    </p>
+    <div id="story-full" style="max-height:0; overflow:hidden; transition:max-height 0.5s ease;">
+      This plan recognizes malnutrition as linked to agriculture, education, gender, and food systems.
+      The economic cost is estimated at <strong>US$ 600 million annually</strong>.
     </div>
+    <button id="readMoreBtn" style="padding:10px 20px; background-color:#d9534f; color:#fff; border:none; border-radius:5px; cursor:pointer; margin-top:10px;">
+      Read More
+    </button>
   </div>
-  <!-- Nutrition Story #2 -->
-<div class="nutrition-story" style="border:1px solid #ccc; padding:15px; margin:20px 0; background-color:#fdfdfd; border-radius:8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-  <h2 style="color:#d9534f;">National Nutrition Alert: Child Malnutrition in Malawi</h2>
-  
-<!-- Nutrition Story #2 -->
-<div class="nutrition-story" style="border:1px solid #ccc; padding:15px; margin:20px 0; background-color:#fdfdfd; border-radius:8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-  
-  <!-- Story Image -->
-  <img src="malawi_child_nutrition.jpg" alt="Child Nutrition in Malawi" 
-       style="width:100%; max-height:250px; object-fit:cover; border-radius:8px; margin-bottom:15px;">
-
-  <h2 style="color:#d9534f;">National Nutrition Alert: Child Malnutrition in Malawi</h2>
-  
-  <!-- Summary -->
-  <p style="font-size:16px; line-height:1.5; color:#333;">
-    According to recent data, about <strong>38 % of children under age 5 in Malawi are stunted</strong>. Only 8.7 % of children aged 6–23 months receive the minimum acceptable diet, and only 24 % meet the required dietary diversity. 
-    The government has launched a <strong>National Multisector Nutrition Policy & Strategic Plan 2025–2030</strong>.
-  </p>
-  
-  <!-- Full story (hidden initially) -->
-  <div id="story-full" style="max-height:0; overflow:hidden; transition:max-height 0.5s ease; font-size:16px; line-height:1.5; color:#333; margin-top:10px;">
-    This plan recognizes malnutrition as not just a health issue but one linked to agriculture, education, gender, and food systems. The economic cost of malnutrition is estimated at <strong>US$ 600 million annually</strong>, roughly 10.3 % of GDP. Addressing this issue requires multisector collaboration, dietary diversity improvement, and focused interventions at the community level.
-  </div>
-  
-  <!-- Read More Button -->
-  <button id="readMoreBtn" 
-          style="display:inline-block; padding:10px 20px; background-color:#d9534f; color:#fff; border:none; border-radius:5px; cursor:pointer; margin-top:10px;">
-    Read More
-  </button>
-</div>
-
-<script>
-  const btn = document.getElementById('readMoreBtn');
-  const fullStory = document.getElementById('story-full');
-
-  btn.addEventListener('click', () => {
-    if(fullStory.style.maxHeight === "0px" || fullStory.style.maxHeight === "") {
-      fullStory.style.maxHeight = fullStory.scrollHeight + "px";
-      btn.textContent = "Read Less";
-    } else {
-      fullStory.style.maxHeight = "0";
-      btn.textContent = "Read More";
-    }
-  });
-</script>
 
   <!-- ===== BMI Calculator ===== -->
   <section id="bmi-calculator">
@@ -384,9 +326,17 @@
 
   <!-- ===== Footer ===== -->
   <footer class="footer">
-    <a href="about.html">About Us</a> |
-    <a href="contact.html">Contact</a> |
-    <a href="mailto:emmanuelkamtima4@gmail.com">Email Us</a>
+    <div>
+      <a href="about.html">About Us</a> |
+      <a href="contact.html">Contact</a> |
+      <a href="mailto:emmanuelkamtima4@gmail.com">Email Us</a>
+    </div>
+    <div class="footer-icons">
+      <a href="https://facebook.com" target="_blank">📘 Facebook</a>
+      <a href="https://wa.me/265990156738" target="_blank">💬 WhatsApp: +265 (0) 990 15 67 38</a>
+      <a href="mailto:yafetichidzaye@gmail.com">✉️ yafetichidzaye@gmail.com</a>
+      <a href="mailto:emmanuelkamtima4@gmail.com">✉️ emmanuelkamtima4@gmail.com</a>
+    </div>
     <br>&copy; 2025 LANDS Association. All rights reserved.
   </footer>
 
@@ -420,16 +370,28 @@
       result.textContent = `Your BMI is ${bmi} (${status})`;
     }
 
-    /* ===== Right-to-Left Sliding Slider ===== */
+    /* ===== Read More Toggle ===== */
+    const btn = document.getElementById('readMoreBtn');
+    const fullStory = document.getElementById('story-full');
+    btn.addEventListener('click', () => {
+      if(fullStory.style.maxHeight === "0px" || fullStory.style.maxHeight === "") {
+        fullStory.style.maxHeight = fullStory.scrollHeight + "px";
+        btn.textContent = "Read Less";
+      } else {
+        fullStory.style.maxHeight = "0";
+        btn.textContent = "Read More";
+      }
+    });
+
+    /* ===== Slider ===== */
     let slideIndex = 0;
     const slides = document.querySelectorAll('.slides img');
     const slidesContainer = document.querySelector('.slides');
     const dots = document.querySelectorAll('.slider-dots .dot');
 
     function showSlide(index) {
-      const offset = -index * 100; // move slides left
+      const offset = -index * 100;
       slidesContainer.style.transform = `translateX(${offset}%)`;
-
       dots.forEach(dot => dot.classList.remove('active'));
       dots[index].classList.add('active');
     }
@@ -445,15 +407,8 @@
       showSlide(slideIndex);
     }
 
-    // Auto-slide every 4 seconds
     setInterval(nextSlide, 4000);
-
-    // Initialize slider
     showSlide(slideIndex);
   </script>
 </body>
-</html>
-
-
-
-
+      </html>
