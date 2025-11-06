@@ -282,6 +282,42 @@
       <img src="21.jpg" alt="LANDS election">
     </div>
   </div>
+  <!-- Nutrition Story #2 -->
+<div class="nutrition-story" style="border:1px solid #ccc; padding:15px; margin:20px 0; background-color:#fdfdfd; border-radius:8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+  <h2 style="color:#d9534f;">National Nutrition Alert: Child Malnutrition in Malawi</h2>
+  
+  <!-- Summary -->
+  <p style="font-size:16px; line-height:1.5; color:#333;">
+    According to recent data, about <strong>38 % of children under age 5 in Malawi are stunted</strong>. Only 8.7 % of children aged 6–23 months receive the minimum acceptable diet, and only 24 % meet the required dietary diversity. 
+    The government has launched a <strong>National Multisector Nutrition Policy & Strategic Plan 2025–2030</strong>.
+  </p>
+  
+  <!-- Full story (hidden initially) -->
+  <div id="story-full" style="max-height:0; overflow:hidden; transition:max-height 0.5s ease; font-size:16px; line-height:1.5; color:#333; margin-top:10px;">
+    This plan recognizes malnutrition as not just a health issue but one linked to agriculture, education, gender, and food systems. The economic cost of malnutrition is estimated at <strong>US$ 600 million annually</strong>, roughly 10.3 % of GDP. Addressing this issue requires multisector collaboration, dietary diversity improvement, and focused interventions at the community level.
+  </div>
+  
+  <!-- Read More Button -->
+  <button id="readMoreBtn" 
+          style="display:inline-block; padding:10px 20px; background-color:#d9534f; color:#fff; border:none; border-radius:5px; cursor:pointer; margin-top:10px;">
+    Read More
+  </button>
+</div>
+
+<script>
+  const btn = document.getElementById('readMoreBtn');
+  const fullStory = document.getElementById('story-full');
+
+  btn.addEventListener('click', () => {
+    if(fullStory.style.maxHeight === "0px" || fullStory.style.maxHeight === "") {
+      fullStory.style.maxHeight = fullStory.scrollHeight + "px";
+      btn.textContent = "Read Less";
+    } else {
+      fullStory.style.maxHeight = "0";
+      btn.textContent = "Read More";
+    }
+  });
+</script>
 
   <!-- ===== BMI Calculator ===== -->
   <section id="bmi-calculator">
@@ -365,4 +401,5 @@
   </script>
 </body>
 </html>
+
 
