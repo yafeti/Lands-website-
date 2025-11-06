@@ -1,159 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-510737776"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-510737776');
-  </script>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LANDS Association</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    .navbar {
-      background-color: orange;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      position: relative;
-    }
-
-    .logo-text {
-      font-size: 1.5em;
-      font-weight: bold;
-    }
-
-    .logo-img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .menu-icon {
-      font-size: 28px;
-      cursor: pointer;
-      display: none;
-    }
-
-    @media (max-width: 768px) {
-      .menu-icon {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: orange;
-        width: 100%;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        text-align: center;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .nav-links li {
-        padding: 15px 0;
-      }
-
-      .logo-img {
-        width: 100px;
-        height: 100px;
-      }
-    }
-
-    /* ===== Simplified Inline Feature Buttons ===== */
-    .subpage-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      padding: 20px;
-      background-color: #fff5e6;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .subpage-links a {
-      background-color: green;
-      color: white;
-      text-decoration: none;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .subpage-links a:hover {
-      background-color: darkgreen;
-    }
-
-    .content {
-      text-align: center;
-      padding: 30px;
-    }
-
-    .image-gallery {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .image-gallery img {
-      width: 300px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 20px 10px;
-      margin-top: 40px;
-      font-size: 1em;
-    }
-    .footer a {
-      color: #bfffa3;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: bold;
-    }
-    .footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
 <body>
 
   <!-- ===== Navbar ===== -->
@@ -168,6 +12,15 @@
       <li><a href="Contact Us.html">Contact Us</a></li>
     </ul>
   </nav>
+
+  <!-- ===== Image Slider (Top) ===== -->
+  <section class="slider" style="max-width:900px;margin:20px auto;position:relative;overflow:hidden;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+    <img class="slide" src="magazine link.jpg" style="width:100%;display:block;">
+    <img class="slide" src="diets.jpg" style="width:100%;display:none;">
+    <img class="slide" src="lands1.jpg" style="width:100%;display:none;">
+    <img class="slide" src="IMG-20250918-WA0035.jpg" style="width:100%;display:none;">
+    <img class="slide" src="21.jpg" style="width:100%;display:none;">
+  </section>
 
   <!-- ===== Simplified Feature Buttons ===== -->
   <section class="subpage-links">
@@ -216,6 +69,7 @@
     <br>&copy; 2025 LANDS Association. All rights reserved.
   </footer>
 
+  <!-- ===== Scripts ===== -->
   <script>
     function toggleMenu() {
       document.getElementById("navLinks").classList.toggle("active");
@@ -243,8 +97,19 @@
       result.style.color = "#2e7d32";
       result.textContent = `Your BMI is ${bmi} (${status})`;
     }
+
+    // ===== Image Slider Script =====
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1;}
+      slides[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+    showSlides();
   </script>
 </body>
-        </html>
-
-
