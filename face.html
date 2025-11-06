@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Video Gallery</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 1.2rem 0;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    .video-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .video-card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+    }
+
+    video {
+      width: 100%;
+      height: 200px;
+      display: block;
+      background-color: #000;
+      cursor: pointer;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .video-info {
+      padding: 10px;
+    }
+
+    .video-info h3 {
+      font-size: 1.1rem;
+      margin: 0 0 5px;
+      color: #007bff;
+    }
+
+    .video-info p {
+      font-size: 0.9rem;
+      color: #555;
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.5rem;
+      }
+      video {
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>🎥 Video Gallery</header>
+
+  <div class="video-gallery">
+    <!-- Video 1 -->
+    <div class="video-card">
+      <video class="clickable-video">
+        <source src="videos/video1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info">
+        <h3>Video Title 1</h3>
+        <p>Click once to play, click again to download.</p>
+      </div>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="video-card">
+      <video class="clickable-video">
+        <source src="videos/video2.mp4" type="video/mp4">
+      </video>
+      <div class="video-info">
+        <h3>Video Title 2</h3>
+        <p>Click once to play, click again to download.</p>
+      </div>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="video-card">
+      <video class="clickable-video">
+        <source src="videos/video3.mp4" type="video/mp4">
+      </video>
+      <div class="video-info">
+        <h3>Video Title 3</h3>
+        <p>Click once to play, click again to download.</p>
+      </div>
+    </div>
+
+    <!-- Video 4 -->
+    <div class="video-card">
+      <video class="clickable-video">
+        <source src="videos/video4.mp4" type="video/mp4">
+      </video>
+      <div class="video-info">
+        <h3>Video Title 4</h3>
+        <p>Click once to play, click again to download.</p>
+      </div>
+    </div>
+
+    <!-- Video 5 -->
+    <div class="video-card">
+      <video class="clickable-video">
+        <source src="videos/video5.mp4" type="video/mp4">
+      </video>
+      <div class="video-info">
+        <h3>Video Title 5</h3>
+        <p>Click once to play, click again to download.</p>
+      </div>
+    </div>
+
+    <!-- Video 6 -->
+    <div class="video-card">
+      <video class="clickable-video">
+        <source src="videos/video6.mp4" type="video/mp4">
+      </video>
+      <div class="video-info">
+        <h3>Video Title 6</h3>
+        <p>Click once to play, click again to download.</p>
+      </div>
+    </div>
+
+    <!-- Video 7 -->
+    <div class="video-card">
+      <video class="clickable-video">
+        <source src="videos/video7.mp4" type="video/mp4">
+      </video>
+      <div class="video-info">
+        <h3>Video Title 7</h3>
+        <p>Click once to play, click again to download.</p>
+      </div>
+    </div>
+
+    <!-- Video 8 -->
+    <div class="video-card">
+      <video class="clickable-video">
+        <source src="videos/video8.mp4" type="video/mp4">
+      </video>
+      <div class="video-info">
+        <h3>Video Title 8</h3>
+        <p>Click once to play, click again to download.</p>
+      </div>
+    </div>
+
+    <!-- Video 9 -->
+    <div class="video-card">
+      <video class="clickable-video">
+        <source src="videos/video9.mp4" type="video/mp4">
+      </video>
+      <div class="video-info">
+        <h3>Video Title 9</h3>
+        <p>Click once to play, click again to download.</p>
+      </div>
+    </div>
+
+    <!-- Video 10 -->
+    <div class="video-card">
+      <video class="clickable-video">
+        <source src="videos/video10.mp4" type="video/mp4">
+      </video>
+      <div class="video-info">
+        <h3>Video Title 10</h3>
+        <p>Click once to play, click again to download.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // When user clicks video first time → play/pause
+    // When clicks second time → go to download.html
+    document.querySelectorAll('.clickable-video').forEach(video => {
+      let clickedOnce = false;
+      video.addEventListener('click', () => {
+        if (!clickedOnce) {
+          if (video.paused) video.play();
+          else video.pause();
+          clickedOnce = true;
+          // reset click tracker after 1.5 seconds
+          setTimeout(() => clickedOnce = false, 1500);
+        } else {
+          // redirect to download page
+          window.location.href = "video.html";
+        }
+      });
+    });
+  </script>
+
+</body>
+          </html>
