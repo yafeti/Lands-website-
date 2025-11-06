@@ -13,12 +13,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LANDS Association</title>
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
     }
 
+    /* ===== Navbar ===== */
     .navbar {
       background-color: orange;
       color: white;
@@ -26,7 +28,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 10px 20px;
-      position: relative;
+      flex-wrap: wrap;
     }
 
     .logo-text {
@@ -69,10 +71,8 @@
         flex-direction: column;
         background-color: orange;
         width: 100%;
-        position: absolute;
-        top: 70px;
-        left: 0;
         text-align: center;
+        margin-top: 10px;
       }
 
       .nav-links.active {
@@ -80,31 +80,30 @@
       }
 
       .nav-links li {
-        padding: 15px 0;
+        padding: 10px 0;
       }
 
       .logo-img {
-        width: 100px;
-        height: 100px;
+        width: 50px;
+        height: 50px;
       }
     }
 
-    /* ===== Simplified Inline Feature Buttons ===== */
+    /* ===== Subpage Links ===== */
     .subpage-links {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 15px;
-      padding: 20px;
+      gap: 10px;
+      padding: 15px;
       background-color: #fff5e6;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     .subpage-links a {
       background-color: green;
       color: white;
       text-decoration: none;
-      padding: 10px 20px;
+      padding: 10px 15px;
       border-radius: 8px;
       font-weight: bold;
       transition: 0.3s;
@@ -114,27 +113,30 @@
       background-color: darkgreen;
     }
 
+    /* ===== Content ===== */
     .content {
       text-align: center;
-      padding: 30px;
+      padding: 20px;
     }
 
     .image-gallery {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 30px;
+      gap: 15px;
+      margin-top: 20px;
     }
 
     .image-gallery img {
-      width: 300px;
-      height: 200px;
+      width: 100%;
+      max-width: 300px;
+      height: auto;
       object-fit: cover;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 
+    /* ===== Footer ===== */
     .footer {
       background: #222;
       color: #fff;
@@ -143,53 +145,75 @@
       margin-top: 40px;
       font-size: 1em;
     }
+
     .footer a {
       color: #bfffa3;
       text-decoration: none;
       margin: 0 10px;
       font-weight: bold;
     }
+
     .footer a:hover {
       text-decoration: underline;
-      /* ===== Image Slider Styles ===== */
-.image-slider {
-  max-width: 900px;
-  margin: 30px auto;
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
+    }
 
-.image-slider .slides img {
-  width: 100%;
-  display: none;
-  border-radius: 10px;
-}
+    /* ===== Image Slider ===== */
+    .image-slider {
+      max-width: 100%;
+      width: 90%;
+      margin: 30px auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
 
-.image-slider .slides img.active {
-  display: block;
-}
+    .image-slider .slides img {
+      width: 100%;
+      display: none;
+      border-radius: 10px;
+    }
 
-.slider-dots {
-  text-align: center;
-  margin-top: 10px;
-}
+    .image-slider .slides img.active {
+      display: block;
+    }
 
-.slider-dots .dot {
-  height: 12px;
-  width: 12px;
-  margin: 0 5px;
-  display: inline-block;
-  background-color: #bbb;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
+    .slider-dots {
+      text-align: center;
+      margin-top: 10px;
+    }
 
-.slider-dots .dot.active {
-  background-color: green;
-}
+    .slider-dots .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      display: inline-block;
+      background-color: #bbb;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .slider-dots .dot.active {
+      background-color: green;
+    }
+
+    /* ===== BMI Calculator ===== */
+    #bmi-calculator input, #bmi-calculator button {
+      width: 100%;
+      max-width: 300px;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    #bmi-calculator button {
+      background: #43a047;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -208,7 +232,7 @@
     </ul>
   </nav>
 
-  <!-- ===== Simplified Feature Buttons ===== -->
+  <!-- ===== Subpage Links ===== -->
   <section class="subpage-links">
     <a href="face.html">Face of Association</a>
     <a href="Blog.html">Nutrition Blog</a>
@@ -217,24 +241,25 @@
     <a href="Images.html">Image Gallery</a>
     <a href="videos.html">Video Gallery</a>
     <a href="magazine.html">Magazine</a>
-    <a href= "Recipe.html">Recipe</a>
+    <a href="Recipe.html">Recipe</a>
   </section>
-  
-<!-- ===== Image Slider ===== -->
-<section class="image-slider">
-  <div class="slides">
-    <img src="lands1.jpg" alt="Slide 1">
-    <img src="diets.jpg" alt="Slide 2">
-    <img src="IMG-20250918-WA0035.jpg" alt="Slide 3">
-    <img src="21.jpg" alt="Slide 4">
-  </div>
-  <div class="slider-dots">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-    <span class="dot" onclick="currentSlide(4)"></span>
-  </div>
-</section>
+
+  <!-- ===== Image Slider ===== -->
+  <section class="image-slider">
+    <div class="slides">
+      <img src="lands1.jpg" alt="Slide 1">
+      <img src="diets.jpg" alt="Slide 2">
+      <img src="IMG-20250918-WA0035.jpg" alt="Slide 3">
+      <img src="21.jpg" alt="Slide 4">
+    </div>
+    <div class="slider-dots">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+  </section>
+
   <!-- ===== Main Content ===== -->
   <div class="content">
     <h2>Welcome to LANDS</h2>
@@ -250,15 +275,13 @@
   </div>
 
   <!-- ===== BMI Calculator ===== -->
-  <section id="bmi-calculator" style="max-width:350px;margin:auto;padding:20px;background:#f9fff9;border-radius:15px;box-shadow:0 0 10px rgba(0,0,0,0.1);text-align:center;">
+  <section id="bmi-calculator">
     <h2 style="color:#2e7d32;">BMI Calculator</h2>
     <p style="color:#555;font-size:14px;">Check your Body Mass Index</p>
 
-    <input type="number" id="weight" placeholder="Weight (kg)" style="width:90%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:8px;">
-    <input type="number" id="height" placeholder="Height (m)" style="width:90%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:8px;">
-
-    <button onclick="calcBMI()" style="background:#43a047;color:white;padding:10px 15px;border:none;border-radius:8px;width:95%;font-weight:bold;cursor:pointer;">Calculate</button>
-
+    <input type="number" id="weight" placeholder="Weight (kg)">
+    <input type="number" id="height" placeholder="Height (m)">
+    <button onclick="calcBMI()">Calculate</button>
     <p id="bmi-result" style="margin-top:10px;font-weight:bold;color:#2e7d32;"></p>
   </section>
 
@@ -271,10 +294,12 @@
   </footer>
 
   <script>
+    /* ===== Navbar Toggle ===== */
     function toggleMenu() {
       document.getElementById("navLinks").classList.toggle("active");
     }
 
+    /* ===== BMI Calculator ===== */
     function calcBMI() {
       const w = parseFloat(document.getElementById('weight').value);
       const h = parseFloat(document.getElementById('height').value);
@@ -297,31 +322,31 @@
       result.style.color = "#2e7d32";
       result.textContent = `Your BMI is ${bmi} (${status})`;
     }
-  </script>
-  <script>
-  let slideIndex = 0;
-  showSlides();
 
-  function showSlides() {
-    const slides = document.querySelectorAll('.image-slider .slides img');
-    const dots = document.querySelectorAll('.slider-dots .dot');
-
-    slides.forEach((slide) => slide.classList.remove('active'));
-    dots.forEach((dot) => dot.classList.remove('active'));
-
-    slideIndex++;
-    if (slideIndex > slides.length) slideIndex = 1;
-
-    slides[slideIndex - 1].classList.add('active');
-    dots[slideIndex - 1].classList.add('active');
-
-    setTimeout(showSlides, 4000); // Change image every 4 seconds
-  }
-
-  function currentSlide(n) {
-    slideIndex = n - 1;
+    /* ===== Image Slider ===== */
+    let slideIndex = 0;
     showSlides();
-  }
+
+    function showSlides() {
+      const slides = document.querySelectorAll('.image-slider .slides img');
+      const dots = document.querySelectorAll('.slider-dots .dot');
+
+      slides.forEach((slide) => slide.classList.remove('active'));
+      dots.forEach((dot) => dot.classList.remove('active'));
+
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+
+      slides[slideIndex - 1].classList.add('active');
+      dots[slideIndex - 1].classList.add('active');
+
+      setTimeout(showSlides, 4000);
+    }
+
+    function currentSlide(n) {
+      slideIndex = n - 1;
+      showSlides();
+    }
   </script>
 </body>
         </html>
